@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blackbook wallet</title>
+        <script src="BB.js"></script>
+        <link rel="stylesheet" href="BB.css">
+    </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <body>
+        <div class="headercontainer">
+            <h1>Blackbook</h1>
+        </div>
+        <div class="menucontainer">
+            <button onclick="back()">Home</button>
+            <button onclick="transact()">Transact</button>
+            <button>Account</button>
+            <button onclick ="Docs()">Docs</button>
+        </div>
+     
+        <div class="maincontainer">
+            <div class="chart">
+                <canvas id="myChart" style="width:auto;max-width:auto"></canvas>
+            </div>
+                <div class="userbuttons">
+                  <button onclick="deposit()">Deposit</button>
+                <button onclick="withdraw()">Withdraw</button>
+                <button onclick= "transact()">Transact</button>
+                <input type="text" id="inc" value="0 Tokens"></input>
+     
+
+              </div>
+            </div>
+    
+    
+        
+      
+        <div class="footercontainer">
+
+        <div class="footer1">
+          <h2>Decentralized</h2>
+          <p>Blackbook wallet is a digital wallet that allows users to own their system while they use the code.</p>
+        </div>
+
+        <div class="footer2">
+          <h2>Secure</h2>
+          <p>Blackbook keeps users safe by using highly secure cryptography</p>
+        </div>
+
+        <div class="footer3">
+          <h2>Easy transactions</h2>
+          <p>Blackbook wallet will provide a quota of free transactions to users every month.</p>
+        </div>
+
+        </div>
+        <div class="footer4">
+            <h3>About us</h3>
+            <p>This company is a DOA and it is operated by governance protocols. This means that no one has access to your account besides you. There is no CEO or Board of directors. Users will each get votes depending on how much stake they have. The company does however have developers that are constantly working on optimizing systems and operations within the app. 
+            </p>
+            <button onclick="contact()">Contact the developers</button>
+        </div>
+    </body>
+
+
+    <script>
+        var xValues = ["savings", "investments", "available", "fees", "payments"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = [
+          "#b91d47",
+          "#00aba9",
+          "#2b5797",
+          "#e8c3b9",
+          "#1e7145"
+        ];
+        
+        new Chart("myChart", {
+          type: "doughnut",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              text: "Account overview"
+            }
+          }
+        });
+        
+        </script>
+        <script>
+            var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+
+new Chart("myChart1", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0.5,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 6, max:16}}],
+    }
+  }
+});
+        </script>
+  
+</html>
